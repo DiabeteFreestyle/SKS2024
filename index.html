@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      <meta charset="utf-8">
+      <title>Quiz</title>
+      <style>
+         /*css reset */
+         
+		   h1,h2,h3,h4,h5,h6,p,label,a{color:black;}
+         h1 {font-size: 4rem;}
+         h2 {font-size: 5rem;}
+         label {font-size: 3.8rem;}
+         p {font-size: 2.8rem;}
+         input {transform: scale(3);}
+         button {transform: scale(3.5);}
+         a{font-size: 2.3rem;}
+      </style>
+   </head>
+   <script src="SKS_Legacy.js"></script>
+   <script src="logic.js"></script>
+   <script>window.onload = choseTopic;</script>>
+   <body>
+      <div id="entrance" style="margin: 0 auto; text-align: center;"></div>
+      <div id="container-lg" style="visibility:hidden" class="container-lg">
+        
+      <div class="row mb-3" id="frame">
+         <div id="score">
+            <p>Выберите тему</p>
+         </div>
+         <h2 id="question"></h2>
+         <div id="content">
+            <input type="radio" id="quiz" value="1" name="fav_language">
+            <hr>
+            <input type="radio" id="quiz" value="2" name="fav_language">
+            <hr>
+            <input type="radio" id="quiz" value="3" name="fav_language">
+         </div>
+         <div id="response">
+            <div id="explanation"></div>
+         </div>
+      </div>
+      <div class="row lg-3 fixed-bottom" id="frame" style="margin-bottom: 30px;">
+         <div class="col">
+            <button id="back" onclick="back()" class="btn btn-secondary" style="width:15%;margin-left:15%">Назад</button>
+         </div>
+         <div class="col">
+            <button id="check" onclick="checkAnswer()" class="btn btn-primary" style="width:45%;float:right;margin-right:55%">Подтвердить</button>
+         </div>
+      </div>
+      
+      </div>
+   </body>
+</html>
