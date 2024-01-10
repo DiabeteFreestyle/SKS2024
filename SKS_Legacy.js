@@ -1323,23 +1323,22 @@
     }
 ];
 function getMultipleRandom(arr, num) {
-      var shuffled=[...arr];
-      let currentIndex = shuffled.length,  randomIndex;
-
-  // While there remain elements to shuffle.
-  while (currentIndex != 0) {
-
-    // Pick a remaining element.
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    // And swap it with the current element.
-    [shuffled[currentIndex], shuffled[randomIndex]] = [
-      shuffled[randomIndex], shuffled[currentIndex]];
+  var shuffledArray = arr.slice();
+  var shuffled = shuffledArray.sort(() => Math.random() - 0.5);
+  // Перемешиваем элементы в массиве случайным образом
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
   }
 
-      return shuffled.slice(0, num);
-      }
+  // Обрезаем массив до желаемой длины, если необходимо
+  if (num < shuffled.length) {
+    shuffled.splice(num);
+  }
+
+  return shuffled;
+}
+
 topic1=data.slice(0,31);
 topic2=data.slice(31,136);
 topic3=data.slice(136,220);
