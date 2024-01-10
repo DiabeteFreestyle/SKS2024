@@ -1322,6 +1322,11 @@
         ]
     }
 ];
+function randomInteger(min, max) {
+  // случайное число от min до (max+1)
+  let rand = min + Math.random() * (max + 1 - min);
+  return Math.floor(rand);
+}
 function getMultipleRandom(arr, num) {
   var shuffledArray = arr.slice();
   var shuffled = shuffledArray.sort(() => Math.random() - 0.5);
@@ -1333,7 +1338,8 @@ function getMultipleRandom(arr, num) {
 
   // Обрезаем массив до желаемой длины, если необходимо
   if (num < shuffled.length) {
-    shuffled.splice(num);
+  let rnd=randomInteger(0,shuffled.length-25);
+    shuffled=shuffled.slice(rnd, rnd+25);
   }
 
   return shuffled;
